@@ -11,4 +11,10 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))//accept extended objec
 app.use(express.static("public"))//use public folder
 app.use(cookieParser())//miidleware .it allow server to easity read,autheticate and manage session cookie
 
+
+//routes
+import userRouter from "./routes/user.routes.js"
+app.use("/api/v1/users",userRouter)
+
+
 export default app
